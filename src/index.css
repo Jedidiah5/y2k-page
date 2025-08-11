@@ -31,4 +31,9 @@ body {
 /* Smooth transitions for all interactive elements */
 * {
   transition: all 0.2s ease-in-out;
+}
+
+/* Split two-color background: left hot pink, right yellow */
+.split-bg {
+  background: linear-gradient(to right, #ff2e6a 0%, #ff2e6a 50%, #ffe94a 50%, #ffe94a 100%);
 } 
