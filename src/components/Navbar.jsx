@@ -8,48 +8,67 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full border-b-2 border-gray-800 shadow-lg">
-      <div className="flex items-center justify-between h-24">
-        {/* Left Section - Brand/Logo */}
-        <div className="bg-pink-500 px-4 sm:px-20 py-4 h-full flex items-center shadow-inner border-b-2 border-r-2 border-gray-800">
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-black tracking-tight">
-            <span className="font-pixel">Y</span>
-            <span className="font-pixel -ml-2 sm:-ml-3 lg:-ml-5">2</span>
-            <span className="font-pixel -ml-2 sm:-ml-3 lg:-ml-5">k</span>
-          </h1>
-        </div>
-
-        {/* Middle Section - Navigation Links (Hidden on mobile) */}
-        <div className="hidden md:flex bg-cyan-400 flex-1 justify-start items-center h-full shadow-inner pl-20 lg:pl-48">
-          <div className="flex space-x-16 lg:space-x-28">
-            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-colors duration-200 font-bold hover:scale-105 text-lg lg:text-xl font-pixel">
-              Home
-            </a>
-            <a href="#shop" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold hover:scale-105 text-lg lg:text-xl font-pixel">
-              Shop
-            </a>
-            <a href="#about" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold hover:scale-105 text-lg lg:text-xl font-pixel">
-              About
-            </a>
-            <a href="#contact" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold hover:scale-105 text-lg lg:text-xl font-pixel">
-              Contact Us
-            </a>
+    <nav className="w-full border-2 border-black shadow-lg">
+      <div className="flex items-stretch h-[131px]">
+        {/* Left Section - Frame 629042 with Y2K */}
+        <div className="relative w-[340px] h-[131px] bg-[#FE3E9E] border-3 border-[#121212] flex items-center justify-center">
+          {/* Frame 629027 - Text container - centered without borders */}
+          <div className="relative w-[180.4px] h-[66px] flex items-center justify-center">
+            {/* Y2K Text - Black layer with blue outline */}
+            <div className="relative flex items-center justify-center w-full h-full">
+              {/* Blue outline text */}
+              <h1 
+                className="absolute text-[106.951px] leading-[108px] font-normal text-[#20BBD5] font-pixel"
+                style={{ 
+                  width: '177px',
+                  height: '108px'
+                }}
+              >
+                Y2K
+              </h1>
+              {/* Black text on top - positioned directly over blue text */}
+              <h1 
+                className="absolute text-[106.951px] leading-[108px] font-normal text-[#121212] font-pixel"
+                style={{ 
+                  width: '177px',
+                  height: '108px',
+                  left: '-1px'
+                }}
+              >
+                Y2K
+              </h1>
+            </div>
           </div>
         </div>
 
-        {/* Right Section - CTA Button (Hidden on mobile) */}
-        <div className="hidden md:flex bg-cyan-400 px-3 sm:px-6 py-4 h-full items-center shadow-inner pr-8 lg:pr-32">
-          <button className="bg-pink-500 text-black font-bold px-4 sm:px-6 py-2 sm:py-3 border-b-2 border-2 border-gray-800 hover:bg-pink-600 hover:rotate-1 hover:-translate-y-1 hover:translate-x-1 transition-all duration-200 flex items-center space-x-2 text-base sm:text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
-            <span className="font-pixel">Own It!</span>
-            <span className="text-lg sm:text-xl font-pixel">→</span>
-          </button>
-        </div>
+        {/* Right Section - Teal Blue with Navigation - Equal height to pink section */}
+        <div className="bg-teal-500 flex-1 flex items-center justify-between px-6 py-4 h-[131px] relative">
+          {/* Navigation Links */}
+          <div className="flex space-x-8">
+            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-colors duration-200 font-bold text-lg">
+              Home
+            </a>
+            <a href="#shop" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+              Shop
+            </a>
+            <a href="#about" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+              About
+            </a>
+            <a href="#contact" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+              Contact Us
+            </a>
+          </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <div className="md:hidden bg-cyan-400 px-6 py-4 h-full flex items-center shadow-inner">
+          {/* Own It Button */}
+          <button className="bg-pink-500 text-black font-bold px-4 py-2 border-2 border-black hover:bg-pink-600 transition-all duration-200 flex items-center space-x-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <span>Own It!</span>
+            <span>→</span>
+          </button>
+
+          {/* Mobile Menu Toggle */}
           <button
             onClick={toggleMobileMenu}
-            className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-3xl font-pixel hover:scale-110 active:scale-95"
+            className="md:hidden text-black hover:text-gray-800 transition-all duration-300 font-bold text-2xl ml-4"
           >
             {isMobileMenuOpen ? '✕' : '☰'}
           </button>
@@ -58,25 +77,24 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-cyan-400 border-t-2 border-gray-800 shadow-inner animate-in slide-in-from-top-2 duration-300">
-          <div className="flex flex-col space-y-6 p-8">
-            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-all duration-300 font-bold text-2xl font-pixel text-center hover:scale-105 active:scale-95 py-3 px-6 rounded-lg hover:bg-pink-500 hover:text-white">
+        <div className="md:hidden bg-teal-500 border-t-2 border-black shadow-inner">
+          <div className="flex flex-col space-y-4 p-6">
+            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-all duration-300 font-bold text-xl text-center py-2">
               Home
             </a>
-            <a href="#shop" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-2xl font-pixel text-center hover:scale-105 active:scale-95 py-3 px-6 rounded-lg hover:bg-pink-500 hover:text-white">
+            <a href="#shop" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-xl text-center py-2">
               Shop
             </a>
-            <a href="#about" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-2xl font-pixel text-center hover:scale-105 active:scale-95 py-3 px-6 rounded-lg hover:bg-pink-500 hover:text-white">
+            <a href="#about" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-xl text-center py-2">
               About
             </a>
-            <a href="#contact" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-2xl font-pixel text-center hover:scale-105 active:scale-95 py-3 px-6 rounded-lg hover:bg-pink-500 hover:text-white">
+            <a href="#contact" className="text-black hover:text-gray-800 transition-all duration-300 font-bold text-xl text-center py-2">
               Contact Us
             </a>
-            {/* Mobile CTA Button */}
-            <div className="pt-6 border-t-2 border-gray-800 mt-4">
-              <button className="bg-pink-500 text-black font-bold px-8 py-4 border-b-2 border-2 border-gray-800 hover:bg-pink-600 hover:rotate-1 hover:-translate-y-1 hover:translate-x-1 transition-all duration-300 flex items-center space-x-3 text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)] mx-auto rounded-lg hover:scale-105 active:scale-95">
-                <span className="font-pixel">Own It!</span>
-                <span className="text-2xl font-pixel">→</span>
+            <div className="pt-4 border-t-2 border-black mt-2">
+              <button className="bg-pink-500 text-black font-bold px-6 py-3 border-2 border-black hover:bg-pink-600 transition-all duration-300 flex items-center space-x-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mx-auto">
+                <span>Own It!</span>
+                <span>→</span>
               </button>
             </div>
           </div>
