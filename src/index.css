@@ -1,7 +1,18 @@
+/* Google Fonts Import - Must be at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@700&display=swap');
+
 /* Y2K Aesthetic Enhancements - Local Pixeboy Font */
 @font-face {
   font-family: 'Pixeboy';
   src: url('./Pixeboy-z8XGD.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ArcadeClassic Font for Y2K Text */
+@font-face {
+  font-family: 'ArcadeClassic';
+  src: url('https://fonts.cdnfonts.com/css/arcadeclassic') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +33,25 @@ body {
   text-transform: uppercase;
 }
 
+.font-arcade {
+  font-family: 'ArcadeClassic', monospace;
+  font-weight: normal;
+}
+
+.font-lexend-mega {
+  font-family: 'Lexend Mega', sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* Split two-color background: left hot pink, right yellow */
+.split-bg {
+  background: linear-gradient(to right, #ff2e6a 0%, #ff2e6a 50%, #ffe94a 50%, #ffe94a 100%);
+}
+
 /* Enhanced button hover effects */
 .hover-lift:hover {
   transform: translateY(-2px);
@@ -31,9 +61,4 @@ body {
 /* Smooth transitions for all interactive elements */
 * {
   transition: all 0.2s ease-in-out;
-}
-
-/* Split two-color background: left hot pink, right yellow */
-.split-bg {
-  background: linear-gradient(to right, #ff2e6a 0%, #ff2e6a 50%, #ffe94a 50%, #ffe94a 100%);
 } 

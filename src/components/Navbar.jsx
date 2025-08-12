@@ -42,27 +42,36 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Teal Blue with Navigation - Equal height to pink section */}
-        <div className="bg-teal-500 flex-1 flex items-center justify-between px-6 py-4 h-[131px] relative">
-          {/* Navigation Links */}
-          <div className="flex space-x-8">
-            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-colors duration-200 font-bold text-lg">
+        <div className="bg-[#20BBD5] flex-1 flex items-center justify-between px-6 py-4 h-[131px] relative border-l-3 border-black">
+          {/* Navigation Links - Centered with balanced spacing */}
+          <div className="flex space-x-20 justify-center flex-1">
+            <a href="#home" className="text-pink-500 hover:text-pink-400 transition-colors duration-200 font-lexend-mega">
               Home
             </a>
-            <a href="#shop" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+            <a href="#shop" className="text-black hover:text-gray-800 transition-colors duration-200 font-lexend-mega">
               Shop
             </a>
-            <a href="#about" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+            <a href="#about" className="text-black hover:text-gray-800 transition-colors duration-200 font-lexend-mega">
               About
             </a>
-            <a href="#contact" className="text-black hover:text-gray-800 transition-colors duration-200 font-bold text-lg">
+            <a href="#contact" className="text-black hover:text-gray-800 transition-colors duration-200 font-lexend-mega">
               Contact Us
             </a>
           </div>
 
           {/* Own It Button */}
-          <button className="bg-pink-500 text-black font-bold px-4 py-2 border-2 border-black hover:bg-pink-600 transition-all duration-200 flex items-center space-x-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <button className="bg-pink-500 text-black font-lexend-mega border-2 border-black hover:bg-pink-600 transition-all duration-200 flex items-center justify-center space-x-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mr-8"
+            style={{
+              width: '226px',
+              height: '71px',
+              top: '32px'
+            }}>
             <span>Own It!</span>
-            <span>→</span>
+            <div className="relative" style={{ width: '24px', height: '24px', flex: 'none', order: 1, flexGrow: 0 }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
           </button>
 
           {/* Mobile Menu Toggle */}
