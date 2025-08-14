@@ -1,6 +1,9 @@
 /* Google Fonts Import - Must be at the very top */
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@700&display=swap');
 
+/* VCR OSD Mono Font for Y2K Text */
+@import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+
 /* Y2K Aesthetic Enhancements - Local Pixeboy Font */
 @font-face {
   font-family: 'Pixeboy';
@@ -36,6 +39,12 @@ body {
 .font-arcade {
   font-family: 'ArcadeClassic', monospace;
   font-weight: normal;
+}
+
+.font-vcr {
+  font-family: 'VCR OSD Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .font-lexend-mega {
