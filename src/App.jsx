@@ -1,8 +1,8 @@
 import Navbar from './components/Navbar';
 import PolaroidCard from './components/PolaroidCard';
-import img1 from './Assets/img1.jpeg';
-import img2 from './Assets/img2.jpeg';
-import img3 from './Assets/img3.jpeg';
+import img1 from './Assets/blue.jpg';
+import img2 from './Assets/green.jpg';
+import img3 from './Assets/red.jpg';
 import stereo_tape from './Stickers/stereo_tape.png';
 import smileyface from './Stickers/smileyface.png';
 import star from './Stickers/star.png';
@@ -202,21 +202,43 @@ function App() {
 
         {/* Right Side - Bright Yellow with Multiple Polaroids */}
         <div className="w-1/2 bg-bright-yellow relative overflow-hidden">
-          <div className="flex flex-wrap justify-center items-center h-full gap-8 p-8">
-            {/* Polaroid Card 1 */}
-            <div className="transform rotate-2">
-              <PolaroidCard imageSrc={img1} caption="Y2K Vibes" rotationClass="rotate-2" />
-            </div>
-            
-            {/* Polaroid Card 2 */}
-            <div className="transform -rotate-1">
-              <PolaroidCard imageSrc={img2} caption="Retro Style" rotationClass="rotate-1" />
-            </div>
-            
-            {/* Polaroid Card 3 */}
-            <div className="transform rotate-3">
-              <PolaroidCard imageSrc={img3} caption="2000s Fashion" rotationClass="rotate-3" />
-            </div>
+          {/* Polaroid Card 1 - Cyan */}
+          <div style={{
+            position: 'absolute',
+            width: '297.710578359325px',
+            height: '397.54252042747726px',
+            top: '68px',
+            left: '-42px',
+            transform: 'rotate(13deg)',
+            opacity: 1
+          }}>
+            <PolaroidCard imageSrc={img1} caption="Y2K Vibes" backgroundColor="#00CFFF" />
+          </div>
+          
+          {/* Polaroid Card 2 - Lime Green */}
+          <div style={{
+            position: 'absolute',
+            width: '297.710578359325px',
+            height: '397.54252042747726px',
+            top: '47.63px',
+            left: '232.01px',
+            transform: 'rotate(13deg)',
+            opacity: 1
+          }}>
+            <PolaroidCard imageSrc={img2} caption="Retro Style" backgroundColor="#D0FF14" />
+          </div>
+          
+          {/* Polaroid Card 3 - Pink */}
+          <div style={{
+            position: 'absolute',
+            width: '297.71057745017464px',
+            height: '397.5425192134595px',
+            top: '353.31px',
+            left: '189.93px',
+            transform: 'rotate(-.5deg)',
+            opacity: 1
+          }}>
+            <PolaroidCard imageSrc={img3} caption="2000s Fashion" backgroundColor="#FF2E63" />
           </div>
         </div>
       </div>

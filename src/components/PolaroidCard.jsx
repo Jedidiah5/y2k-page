@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PolaroidCard({ imageSrc, caption, rotationClass = "-rotate-3", stickerSrc }) {
+function PolaroidCard({ imageSrc, caption, rotationClass = "-rotate-3", stickerSrc, backgroundColor = "#00CFFF" }) {
   return (
     <div className="relative select-none">
       {stickerSrc && (
@@ -11,16 +11,44 @@ function PolaroidCard({ imageSrc, caption, rotationClass = "-rotate-3", stickerS
         />
       )}
       <div
-        className={
-          "bg-white border border-black/10 shadow-2xl p-3 pb-6 w-64 sm:w-72 transform " +
-          rotationClass
-        }
-        style={{ filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
+        style={{
+          width: '288.7129890343151px',
+          height: '388.5483185537197px',
+          background: backgroundColor,
+          border: '3px solid #121212',
+          borderRadius: '1px',
+          transform: 'rotate(-6.9deg)',
+          opacity: 1,
+          padding: '0px 20px 20px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          position: 'relative',
+          boxShadow: '8px 8px 0px #000000'
+        }}
       >
-        <div className="bg-black/5">
-          <img src={imageSrc} alt={caption} className="w-full h-64 object-cover block" />
+        <div 
+          style={{
+            width: '249.13861675658148px',
+            height: '277.02054490897757px',
+            border: '3px solid #121212',
+            borderRadius: '1px',
+            overflow: 'hidden',
+            marginTop: '15px'
+          }}
+        >
+          <img 
+            src={imageSrc} 
+            alt={caption} 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+          />
         </div>
-        <p className="text-center mt-3 text-gray-800 font-semibold tracking-wide">{caption}</p>
       </div>
     </div>
   );
