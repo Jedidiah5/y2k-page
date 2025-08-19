@@ -15,7 +15,7 @@ function App() {
 
       <div className="flex h-screen">
         {/* Left Side - Hot Pink with Y2K Content */}
-        <div className="w-1/2 flex items-center justify-center relative">
+        <div className="w-1/2 flex items-center justify-center relative overflow-hidden">
           {/* Smiley face emoji in top-left */}
           <img src={smileyface} alt="Smiley Face" className="absolute top-10 left-24 w-24 h-24" />
           
@@ -201,7 +201,7 @@ function App() {
         </div>
 
         {/* Right Side - Bright Yellow with Multiple Polaroids */}
-        <div className="w-1/2 relative overflow-hidden">
+        <div className="w-1/2 relative overflow-visible">
           {/* Polaroid Card 1 - Cyan */}
           <div style={{
             position: 'absolute',
