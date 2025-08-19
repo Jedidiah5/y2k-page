@@ -201,7 +201,7 @@ function App() {
         </div>
 
         {/* Right Side - Bright Yellow with Multiple Polaroids */}
-        <div className="w-1/2 bg-bright-yellow relative overflow-hidden">
+        <div className="w-1/2 relative overflow-hidden">
           {/* Polaroid Card 1 - Cyan */}
           <div style={{
             position: 'absolute',
