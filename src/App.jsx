@@ -7,6 +7,9 @@ import stereo_tape from './Stickers/stereo_tape.png';
 import smileyface from './Stickers/smileyface.png';
 import star from './Stickers/star.png';
 import musicplayer from './Stickers/musicplayer.png';
+import heart from './Stickers/heart.png';
+import computer from './Stickers/computer.png';
+import controller from './Stickers/controller.png';
 
 function App() {
   return (
@@ -240,6 +243,70 @@ function App() {
           }}>
             <PolaroidCard imageSrc={img3} caption="2000s Fashion" backgroundColor="#FF2E63" />
           </div>
+
+          {/* Heart sticker (mid-right above zigzag) */}
+          <img 
+            src={heart}
+            alt="Heart"
+            style={{
+              position: 'absolute',
+              width: '83.00000172882699px',
+              height: '70.35026696827231px',
+              top: '370px',
+              left: '430px',
+              transform: 'rotate(0deg)',
+              opacity: 1,
+              zIndex: 30
+            }}
+          />
+
+          {/* Computer sticker (top-right corner) */}
+          <img 
+            src={computer}
+            alt="Computer"
+            style={{
+              position: 'absolute',
+              width: '68.50788732550063px',
+              height: '57.000002592920424px',
+              top: '20px',
+              left: '610px',
+              transform: 'rotate(-15deg)',
+              opacity: 1,
+              zIndex: 30
+            }}
+          />
+
+          {/* Stereo tape sticker (lower-left on yellow half) */}
+          <img 
+            src={stereo_tape}
+            alt="Stereo Tape"
+            style={{
+              position: 'absolute',
+              width: '63.999996615928126px',
+              height: '67.71014449855795px',
+              top: '610px',
+              left: '120px',
+              transform: 'rotate(-10deg)',
+              opacity: 1,
+              zIndex: 30
+            }}
+          />
+
+          {/* Controller sticker (bottom center, spilling across split) */}
+          <img 
+            src={controller}
+            alt="Controller"
+            style={{
+              position: 'absolute',
+              width: '63.999996615928126px',
+              height: '67.71014449855795px',
+              top: '730px',
+              left: '-40px',
+              transform: 'rotate(0deg)',
+              opacity: 1,
+              zIndex: 40
+            }}
+          />
         </div>
       </div>
     </div>
