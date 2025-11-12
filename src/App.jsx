@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react';
 import Navbar from './components/Navbar';
 import PolaroidCard from './components/PolaroidCard';
 import img1 from './Assets/blue.jpg';
@@ -484,73 +485,99 @@ function App() {
 
       {/* FEATURED PRODUCTS Section */}
       <section id="featured" className="bg-gray-50 min-h-screen relative overflow-hidden py-20">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="font-vcr text-6xl mb-6 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
-            FEATURED PRODUCTS
-          </h2>
-          <p className="font-lexend-mega text-2xl text-gray-700 max-w-3xl mx-auto px-8">
-            Explore our handpicked collection of iconic Y2K pieces that defined the early 2000s
-          </p>
-        </div>
-
-        {/* Product Grid */}
-        <div className="max-w-6xl mx-auto px-8 mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Product 1 - Jeans Mini Skirt */}
-            <div className="text-center">
-              <div className="relative inline-block">
-                <div className="bg-pink-400 p-4 border-4 border-black relative">
-                  <img src={jeans} alt="Jeans Mini Skirt" className="w-full h-80 object-cover" />
-                  {/* Yellow star sticker */}
-                  <div className="absolute -top-3 -left-3 w-12 h-12 bg-yellow-400 border-2 border-black rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="font-lexend-mega font-bold text-2xl mt-6 mb-2">Jeans Mini Skirt</h3>
-              <p className="font-lexend-mega text-3xl text-purple-600">$500.00</p>
-            </div>
-
-            {/* Product 2 - Crochet Sweater */}
-            <div className="text-center">
-              <div className="relative inline-block">
-                <div className="bg-cyan-400 p-4 border-4 border-black">
-                  <img src={crochet_sweater} alt="Crochet Sweater" className="w-full h-80 object-cover" />
-                </div>
-              </div>
-              <h3 className="font-lexend-mega font-bold text-2xl mt-6 mb-2">Crochet Sweater</h3>
-              <p className="font-lexend-mega text-3xl text-purple-600">$1,500.00</p>
-            </div>
-
-            {/* Product 3 - Spaceman Glasses */}
-            <div className="text-center">
-              <div className="relative inline-block">
-                <div className="bg-orange-400 p-4 border-4 border-black relative">
-                  <img src={spaceman} alt="Spaceman Glasses" className="w-full h-80 object-cover" />
-                  {/* Green star sticker */}
-                  <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-green-400 border-2 border-black rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="font-lexend-mega font-bold text-2xl mt-6 mb-2">Spaceman Glasses</h3>
-              <p className="font-lexend-mega text-3xl text-purple-600">$600.00</p>
-            </div>
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="absolute top-10 left-10 grid grid-cols-8 gap-4 opacity-20">
+            {Array.from({ length: 56 }).map((_, index) => (
+              <span key={`dot-${index}`} className="w-2 h-2 bg-black rounded-full" />
+            ))}
           </div>
         </div>
 
-        {/* Call to Action Button */}
-        <div className="text-center">
-          <button className="bg-gradient-to-r from-pink-400 to-pink-600 text-white px-12 py-4 rounded-lg font-lexend-mega font-bold text-xl border-2 border-black hover:scale-105 transition-transform duration-300 shadow-lg">
-            View All Products →
-          </button>
-        </div>
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-[#FE3E9E] text-black font-lexend-mega uppercase tracking-[0.35em] px-6 py-2 border-4 border-black shadow-[6px_6px_0px_rgba(0,0,0,1)] mb-4">
+              The Y2K Dispatch
+            </span>
+            <h2 className="font-vcr text-5xl md:text-6xl text-[#121212] mb-4">
+              FEATURED PRODUCTS
+            </h2>
+            <p className="font-lexend-mega text-2xl text-gray-700 max-w-3xl mx-auto">
+              Drop into our weekly round-up of must-have looks, trend deep dives, and vintage hotspots.
+            </p>
+          </div>
 
-        {/* Decorative Heart */}
-        <div className="absolute bottom-8 right-8 w-16 h-16">
-          <div className="w-full h-full bg-pink-400 border-2 border-black transform rotate-45 relative">
-            <div className="absolute inset-0 bg-pink-400 border-2 border-black transform rotate-45 scale-75"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Card 1 */}
+            <article className="relative">
+              <div className="absolute -top-6 -left-6 bg-black w-full h-full" />
+              <div className="relative bg-[#FFD400] border-4 border-black px-8 py-10 shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-lexend-mega text-lg tracking-[0.25em] uppercase text-black">
+                    Y2K Hottest Accessories
+                  </span>
+                  <img src={musicplayer} alt="Boombox sticker" className="w-10 h-10 rotate-[-8deg]" />
+                </div>
+                <div className="aspect-[3/4] bg-white border-4 border-black mb-6 overflow-hidden shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+                  <img src={varsity} alt="Accessories" className="w-full h-full object-cover" />
+                </div>
+                <p className="text-black leading-relaxed mb-6">
+                  A round up of must-have bags, hats and jewelry of the Y2K era.
+                </p>
+                <button className="bg-black text-white font-lexend-mega px-6 py-3 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition">
+                  Read More →
+                </button>
+              </div>
+            </article>
+
+            {/* Card 2 */}
+            <article className="relative">
+              <div className="absolute -top-6 -left-6 bg-black w-full h-full" />
+              <div className="relative bg-[#FE3E9E] border-4 border-black px-8 py-10 shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-lexend-mega text-lg tracking-[0.25em] uppercase text-black">
+                    The History Of The Croptops
+                  </span>
+                  <img src={smileyface} alt="Smiley sticker" className="w-10 h-10 rotate-[12deg]" />
+                </div>
+                <div className="aspect-[3/4] bg-white border-4 border-black mb-6 overflow-hidden shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+                  <img src={crochet_sweater} alt="Crop top" className="w-full h-full object-cover" />
+                </div>
+                <p className="text-black leading-relaxed mb-6">
+                  How this iconic Y2K staple became a fashion must-have.
+                </p>
+                <button className="bg-black text-white font-lexend-mega px-6 py-3 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition">
+                  Read More →
+                </button>
+              </div>
+            </article>
+
+            {/* Card 3 */}
+            <article className="relative">
+              <div className="absolute -top-6 -left-6 bg-black w-full h-full" />
+              <div className="relative bg-[#20BBD5] border-4 border-black px-8 py-10 shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-lexend-mega text-lg tracking-[0.25em] uppercase text-black">
+                    Favourite Vintage Shops
+                  </span>
+                  <img src={star} alt="Star sticker" className="w-10 h-10 rotate-[-10deg]" />
+                </div>
+                <div className="aspect-[3/4] bg-white border-4 border-black mb-6 overflow-hidden shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+                  <img src={spaceman} alt="Vintage shops" className="w-full h-full object-cover" />
+                </div>
+                <p className="text-black leading-relaxed mb-6">
+                  Where to find the best Y2K pieces for your collection.
+                </p>
+                <button className="bg-black text-white font-lexend-mega px-6 py-3 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition">
+                  Read More →
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-14 flex justify-center">
+            <button className="bg-[#05D87C] text-black font-lexend-mega px-10 py-4 border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-[3px] transition uppercase tracking-[0.3em]">
+              Go To Dispatch
+            </button>
           </div>
         </div>
       </section>
@@ -558,25 +585,71 @@ function App() {
       {/* ABOUT Section */}
       <section
         id="about"
-        className="bg-white py-24 border-t-4 border-b-4 border-black relative overflow-hidden"
+        className="bg-white py-28 border-t-4 border-b-4 border-black relative overflow-hidden"
       >
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="font-lexend-mega font-bold text-5xl text-[#121212] mb-6">
-            About Our Y2K Universe
-          </h2>
-          <p className="text-gray-700 text-xl leading-relaxed max-w-3xl mx-auto">
-            We are on a mission to revive the unapologetic energy of the early 2000s. From pixel-perfect
-            accessories to neon statement pieces, every drop is curated by creators who lived the era and
-            refuse to let it fade. Step into a world where playlists came on CDs, outfits came with glitter,
-            and self-expression was always loud.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFF4FB] via-white to-[#E9FFFB] opacity-90" />
+        <div className="absolute -top-32 -left-20 w-72 h-72 bg-[#FF2E63]/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 right-12 w-80 h-80 bg-[#20BBD5]/20 rounded-full blur-3xl" />
+
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-block bg-[#20BBD5] text-black font-lexend-mega uppercase tracking-[0.35em] px-6 py-2 border-4 border-black shadow-[6px_6px_0px_rgba(0,0,0,1)] mb-6">
+              About Us
+            </span>
+            <h2 className="font-lexend-mega font-bold text-5xl text-[#121212] mb-6">
+              About Our Y2K Universe
+            </h2>
+            <p className="text-gray-700 text-xl leading-relaxed">
+              We are on a mission to revive the unapologetic energy of the early 2000s. From pixel-perfect
+              accessories to neon statement pieces, every drop is curated by creators who lived the era and
+              refuse to let it fade. Step into a world where playlists came on CDs, outfits came with glitter,
+              and self-expression was always loud.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-10 md:grid-cols-3">
+            <div className="bg-white border-4 border-black rounded-[18px] px-8 py-10 shadow-[10px_10px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+              <h3 className="font-lexend-mega text-2xl text-[#FE3E9E] mb-4 uppercase tracking-wide">
+                Curated Drops
+              </h3>
+              <p className="text-gray-800 leading-relaxed">
+                Weekly edits from vintage archives and independent designers. Expect rhinestones, metallics,
+                and the unpredictable mix that made the millennium iconic.
+              </p>
+            </div>
+            <div className="bg-[#20BBD5] border-4 border-black rounded-[18px] px-8 py-10 shadow-[10px_10px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+              <h3 className="font-lexend-mega text-2xl text-black mb-4 uppercase tracking-wide">
+                Community First
+              </h3>
+              <p className="text-black leading-relaxed">
+                Pop-up styling events, throwback playlists, and creator collabs keep the scene alive. Share your
+                fit pics and get featured on our retro wall of fame.
+              </p>
+            </div>
+            <div className="bg-white border-4 border-black rounded-[18px] px-8 py-10 shadow-[10px_10px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform">
+              <h3 className="font-lexend-mega text-2xl text-[#FFD400] mb-4 uppercase tracking-wide">
+                Sustainability
+              </h3>
+              <p className="text-gray-800 leading-relaxed">
+                We source deadstock materials, revive thrift treasures, and design pieces to last beyond trends—
+                because nostalgia deserves a future.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <button className="bg-[#FE3E9E] text-black font-lexend-mega px-10 py-4 border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-[3px] transition">
+              Meet the Team →
+            </button>
+            <button className="bg-white text-[#121212] font-lexend-mega px-10 py-4 border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-[3px] transition">
+              Explore the Lookbook
+            </button>
+          </div>
         </div>
-        <div className="absolute -top-16 left-12 rotate-6">
-          <img src={controller} alt="Controller Sticker" className="w-24 h-24 opacity-80" />
-        </div>
-        <div className="absolute bottom-12 right-16 -rotate-3">
-          <img src={star} alt="Star Sticker" className="w-16 h-16 opacity-90" />
-        </div>
+
+        <img src={controller} alt="Controller Sticker" className="absolute -top-10 left-10 w-24 h-24 opacity-80 rotate-6" />
+        <img src={star} alt="Star Sticker" className="absolute top-24 right-12 w-14 h-14 opacity-90 -rotate-3 animate-pulse" />
+        <img src={heart} alt="Heart Sticker" className="absolute bottom-10 left-16 w-20 h-20 opacity-90 rotate-[-8deg]" />
       </section>
 
       {/* CONTACT Section */}
