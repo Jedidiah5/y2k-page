@@ -500,7 +500,7 @@ function App() {
             {/* Product 1 - Jeans Mini Skirt */}
             <div className="text-center">
               <div className="relative inline-block">
-                <div className="bg-pink-400 p-4 border-4 border-black border-white border-4 relative">
+                <div className="bg-pink-400 p-4 border-4 border-black relative">
                   <img src={jeans} alt="Jeans Mini Skirt" className="w-full h-80 object-cover" />
                   {/* Yellow star sticker */}
                   <div className="absolute -top-3 -left-3 w-12 h-12 bg-yellow-400 border-2 border-black rounded-full flex items-center justify-center">
@@ -515,7 +515,7 @@ function App() {
             {/* Product 2 - Crochet Sweater */}
             <div className="text-center">
               <div className="relative inline-block">
-                <div className="bg-cyan-400 p-4 border-4 border-black border-white border-4">
+                <div className="bg-cyan-400 p-4 border-4 border-black">
                   <img src={crochet_sweater} alt="Crochet Sweater" className="w-full h-80 object-cover" />
                 </div>
               </div>
@@ -526,7 +526,7 @@ function App() {
             {/* Product 3 - Spaceman Glasses */}
             <div className="text-center">
               <div className="relative inline-block">
-                <div className="bg-orange-400 p-4 border-4 border-black border-white border-4 relative">
+                <div className="bg-orange-400 p-4 border-4 border-black relative">
                   <img src={spaceman} alt="Spaceman Glasses" className="w-full h-80 object-cover" />
                   {/* Green star sticker */}
                   <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-green-400 border-2 border-black rounded-full flex items-center justify-center">
@@ -582,27 +582,78 @@ function App() {
       {/* CONTACT Section */}
       <section
         id="contact"
-        className="bg-[#20BBD5] py-24 border-t-4 border-black"
+        className="bg-[#FFE399] py-24 border-t-4 border-b-4 border-black relative overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-          <h2 className="font-lexend-mega font-bold text-5xl text-black">
-            Let&apos;s Stay Connected
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-10">
+          <h2 className="font-lexend-mega font-bold text-5xl text-[#121212] uppercase tracking-[0.2em]">
+            GET THE DROP!
           </h2>
-          <p className="text-black text-xl max-w-2xl mx-auto leading-relaxed">
-            Questions, collabs, or just want to share your best Y2K fit? Drop us a line and we&apos;ll
-            slide into your inbox faster than a portable CD player skips a track.
+          <p className="text-[#121212] text-xl max-w-2xl mx-auto leading-relaxed">
+            Signup for exclusive Y2K drops, sales and fashion tips. No spam. Only the good stuff!
           </p>
-          <div className="bg-white border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] p-10 space-y-6">
-            <p className="font-lexend-mega text-2xl text-[#121212]">hello@y2kpage.com</p>
-            <p className="text-[#121212] text-lg">
-              2000 Flashback Blvd · Suite 24 · Los Angeles, CA
-            </p>
-            <button className="bg-black text-[#20BBD5] font-lexend-mega px-10 py-4 border-4 border-[#121212] hover:scale-105 transition-transform">
-              Send us a message
+          <div className="relative flex flex-col items-center">
+            <div className="flex w-full max-w-2xl flex-col md:flex-row shadow-[8px_8px_0px_rgba(0,0,0,1)] border-4 border-black bg-white">
+              <input
+                type="email"
+                placeholder="Enter your email..."
+                className="flex-1 px-6 py-5 text-lg font-lexend-mega text-[#121212] outline-none border-b-4 border-black md:border-b-0 md:border-r-4"
+              />
+              <button
+                type="button"
+                className="w-full md:w-auto bg-[#FFD400] px-10 py-5 font-lexend-mega text-[#121212] border-t-4 md:border-t-0 border-black flex items-center justify-center space-x-3 hover:bg-[#ffdd33] transition"
+              >
+                <span>Subscribe</span>
+                <span role="img" aria-label="mail">✉️</span>
+              </button>
+            </div>
+            <p className="mt-6 text-[#121212] font-lexend-mega">No spam. Only the good stuff!</p>
+          </div>
+        </div>
+
+        <img
+          src={computer}
+          alt="Computer Sticker"
+          className="hidden md:block absolute left-16 top-16 w-24 h-24 rotate-[-10deg]"
+        />
+        <img
+          src={musicplayer}
+          alt="Music Player Sticker"
+          className="hidden md:block absolute right-16 bottom-12 w-24 h-24 rotate-3"
+        />
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#0F0F0F] text-white py-16 border-t-4 border-black">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
+          <div className="text-center md:text-left space-y-3">
+            <span className="font-pixel text-[72px] leading-none text-[#FE3E9E] block">Y2K</span>
+            <p className="text-sm text-[#20BBD5] uppercase tracking-[0.4em]">Retro Rewind</p>
+          </div>
+
+          <nav className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[#20BBD5] font-lexend-mega text-lg">
+            <a href="#home" className="hover:text-white transition">Home</a>
+            <a href="#shop" className="hover:text-white transition">Shop</a>
+            <a href="#about" className="hover:text-white transition">About</a>
+            <a href="#contact" className="hover:text-white transition">Contact Us</a>
+          </nav>
+
+          <div className="text-center md:text-right space-y-4">
+            <div className="flex items-center justify-center md:justify-end gap-4 text-[#FE3E9E] text-2xl">
+              <span aria-label="Instagram" role="img">📸</span>
+              <span aria-label="Facebook" role="img">📘</span>
+              <span aria-label="YouTube" role="img">📺</span>
+              <span aria-label="X" role="img">❌</span>
+            </div>
+            <button className="bg-[#FE3E9E] text-black font-lexend-mega px-6 py-3 border-4 border-black shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition">
+              Get The Drop!
             </button>
           </div>
         </div>
-      </section>
+
+        <div className="mt-12 text-center text-[#F8D4FF] text-sm font-lexend-mega space-y-2">
+          <p>© 2025 Y2K Brand. All Rights Reserved</p>
+        </div>
+      </footer>
     </div>
   )
 }
