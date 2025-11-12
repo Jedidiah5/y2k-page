@@ -25,7 +25,7 @@ function App() {
       <Navbar />
 
       {/* Landing Page Section */}
-      <div className="flex h-screen split-bg">
+      <section id="home" className="flex h-screen split-bg">
         {/* Left Side - Hot Pink with Y2K Content */}
         <div className="w-1/2 flex items-center justify-center relative overflow-hidden">
           {/* Smiley face emoji in top-left */}
@@ -317,10 +317,10 @@ function App() {
             }}
           />
         </div>
-      </div>
+      </section>
 
       {/* NEW ARRIVALS Section */}
-      <section className="bg-gradient-to-br from-pink-400 via-purple-500 to-cyan-400 min-h-screen relative overflow-hidden">
+      <section id="shop" className="bg-gradient-to-br from-pink-400 via-purple-500 to-cyan-400 min-h-screen relative overflow-hidden">
         {/* Pixelated Banner */}
         <div className="bg-black py-6 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap">
@@ -483,7 +483,7 @@ function App() {
       </section>
 
       {/* FEATURED PRODUCTS Section */}
-      <section className="bg-gray-50 min-h-screen relative overflow-hidden py-20">
+      <section id="featured" className="bg-gray-50 min-h-screen relative overflow-hidden py-20">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="font-vcr text-6xl mb-6 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
@@ -551,6 +551,55 @@ function App() {
         <div className="absolute bottom-8 right-8 w-16 h-16">
           <div className="w-full h-full bg-pink-400 border-2 border-black transform rotate-45 relative">
             <div className="absolute inset-0 bg-pink-400 border-2 border-black transform rotate-45 scale-75"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT Section */}
+      <section
+        id="about"
+        className="bg-white py-24 border-t-4 border-b-4 border-black relative overflow-hidden"
+      >
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="font-lexend-mega font-bold text-5xl text-[#121212] mb-6">
+            About Our Y2K Universe
+          </h2>
+          <p className="text-gray-700 text-xl leading-relaxed max-w-3xl mx-auto">
+            We are on a mission to revive the unapologetic energy of the early 2000s. From pixel-perfect
+            accessories to neon statement pieces, every drop is curated by creators who lived the era and
+            refuse to let it fade. Step into a world where playlists came on CDs, outfits came with glitter,
+            and self-expression was always loud.
+          </p>
+        </div>
+        <div className="absolute -top-16 left-12 rotate-6">
+          <img src={controller} alt="Controller Sticker" className="w-24 h-24 opacity-80" />
+        </div>
+        <div className="absolute bottom-12 right-16 -rotate-3">
+          <img src={star} alt="Star Sticker" className="w-16 h-16 opacity-90" />
+        </div>
+      </section>
+
+      {/* CONTACT Section */}
+      <section
+        id="contact"
+        className="bg-[#20BBD5] py-24 border-t-4 border-black"
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+          <h2 className="font-lexend-mega font-bold text-5xl text-black">
+            Let&apos;s Stay Connected
+          </h2>
+          <p className="text-black text-xl max-w-2xl mx-auto leading-relaxed">
+            Questions, collabs, or just want to share your best Y2K fit? Drop us a line and we&apos;ll
+            slide into your inbox faster than a portable CD player skips a track.
+          </p>
+          <div className="bg-white border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] p-10 space-y-6">
+            <p className="font-lexend-mega text-2xl text-[#121212]">hello@y2kpage.com</p>
+            <p className="text-[#121212] text-lg">
+              2000 Flashback Blvd · Suite 24 · Los Angeles, CA
+            </p>
+            <button className="bg-black text-[#20BBD5] font-lexend-mega px-10 py-4 border-4 border-[#121212] hover:scale-105 transition-transform">
+              Send us a message
+            </button>
           </div>
         </div>
       </section>
